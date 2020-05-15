@@ -1,4 +1,5 @@
-var data = [{
+var data = [
+  {
     datetime: "1/1/2010",
     city: "benton",
     state: "ar",
@@ -6,8 +7,7 @@ var data = [{
     shape: "circle",
     durationMinutes: "5 mins.",
     comments: "4 bright green circles high in the sky going in circles then one bright green light at my front door."
-  },
-  {
+  }, {
     datetime: "1/1/2010",
     city: "bonita",
     state: "ca",
@@ -15,8 +15,7 @@ var data = [{
     shape: "light",
     durationMinutes: "13 minutes",
     comments: "Three bright red lights witnessed floating stationary over San Diego New Years Day 2010"
-  },
-  {
+  }, {
     datetime: "1/1/2010",
     city: "el cajon",
     state: "ca",
@@ -112,7 +111,7 @@ var data = [{
     state: "ca",
     country: "us",
     shape: "light",
-    durationMinutes: "10:00",
+    durationMinutes: "10:00 min",
     comments: "Three bright red lights in a straight line formation"
   },
   {
@@ -229,7 +228,7 @@ var data = [{
     state: "fl",
     country: "us",
     shape: "unknown",
-    durationMinutes: 15,
+    durationMinutes: "15" ,
     comments: "Six flickering orange lights over baker"
   },
   {
@@ -688,7 +687,7 @@ var data = [{
     state: "ca",
     country: "us",
     shape: "triangle",
-    durationMinutes: 20,
+    durationMinutes: "20",
     comments: "((HOAX??))  1/9/19 DURATION 20:00 FREEDOM CA  IT WAS A TRIANGLE BUT FIRST IT WAS ONE LIGHT"
   },
   {
@@ -958,7 +957,7 @@ var data = [{
     state: "wi",
     country: "us",
     shape: "disk",
-    durationMinutes: "15minutes",
+    durationMinutes: "15 minutes",
     comments: "five glowning globes over waukesha&#44wi"
   },
   {

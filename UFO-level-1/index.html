@@ -5,29 +5,81 @@
   <meta charset="utf-8">
   <title>UFO Locator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Monda:wght@700&family=Noto+Sans+JP&family=Raleway:wght@500&display=swap" rel='stylesheet' type='text/css' importance="high">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/css/style.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 
 <body>
     <div class="wrapper">
-        <nav class ="navbar navbar-light bg-light">
+        <nav class ="navbar navbar-dark bg-dark" style="font-family: 'Raleway', sans-serif;">
+            
                 <a class="navbar-brand h2" href="index.html"> 
                     <img src='static/images/hiclipart.com.png' class="d-inline-block align-top" loading="lazy" alt='logo' height="30" width="30" >
                     UFO Locator 
                 </a>
         </nav>
-        <br>
-        <div class="hero-image">
-            <div class="hero-text">
-
-            </div>
-            <h1>UFO Sightings</h1>
-            <p>The Truth is Out There</p>
+        
+        <div class="hero">
+            <h1 >UFO Sightings</h1>
+            <p >The Truth is Out There</p>  
         </div>
+        <br>
+
+        <div class="col_wrapper">
+            <div class="row "> 
+                <div class= "col-lg-3 col-md-4 col-6">
+                    <div class= "card text-white bg-dark">
+                        <h5 class= "card-header">Filter Search</h5>
+                        <div class="card-body">
+                            <form>
+                                <div class="col-lg-11">
+                                    <h6 class= "card-text">Enter Date:</h6>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" id="inputDate">
+                                    </div>
+                                    <button type="submit" class="btn btn-block btn-secondary mb-2" id="search">Filter Table</button>
+                                </div>
+                            </form>
+                        </div>
+                            <!-- filter form goes here -->
+                    </div>
+                    
+                    
+                </div>
+                    <br>
+                <div class = "col-lg-9 col-12">
+                    <div id="table-area">
+                        <table id="ufo-table" class="table table-dark table-striped">
+                          <thead class="thead-light">
+                            <tr>
+                              <th scope="col">Date</th>
+                              <th scope="col">City</th>
+                              <th scope="col">State</th>
+                              <th scope="col">Country</th>
+                              <th scope="col">Shape</th>
+                              <th scope="col">Duration</th>
+                              <th scope="col">Comments</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- table here -->
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
 
     </div>
     
+
     
 </body>
+<script src="static/data.js"></script>
+<script src="static/app.js"></script>
+
+</html>

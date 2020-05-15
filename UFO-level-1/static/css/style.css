@@ -1,0 +1,46 @@
+/* Create a hero image */
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+/* use wrapper to contain all content (rather than container--too small) */
+.wrapper {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 130px;
+    overflow: auto;
+  }
+.col_wrapper {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 130px;
+    padding-left: 50px;
+    padding-right: 50px;
+    overflow: auto;
+  }
+
+.hero{
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  position: relative;
+  height: 550px;
+  padding: 20px;
+  margin: 0;
+  background-image: url("https://cdn.mos.cms.futurecdn.net/yrQ4sgbYsvSM7xmYdSDtRj-1200-80.jpg");
+  background-attachment: fixed;
+  background-position:  center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+/* format text that will go within hero attribute -relative format to parent (hero) */
+.hero h1{
+    margin-top: 100px;
+    text-align: center;
+    color: white;
+}
+.hero p{
+    text-align: center;
+    color: white;   
+}
