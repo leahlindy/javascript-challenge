@@ -44,3 +44,9 @@ body {
     text-align: center;
     color: white;   
 }
+
+#datetime{
+    format: 'DD/MM/YYYY'
+    
+}
+
