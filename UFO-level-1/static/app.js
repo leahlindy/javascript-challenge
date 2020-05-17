@@ -40,10 +40,10 @@ function newDate () {
     
     // need to apply the upDate as new date in data
     for (i=0; i<data.length; i++) {
-        sighting.datetime === upDate}
-    console.log(data);
-    return data;
-    });
+        Object.entries(sighting).forEach(([keys,values]) => {
+        values === upDate});
+    }
+});
 }
 
 newDate(data);
