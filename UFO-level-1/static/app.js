@@ -2,17 +2,60 @@
 //   * Make sure you have a column for `date/time`, `city`, `state`, `country`, `shape`, and `comment` at the very least.
 //   * Use a date form in your HTML document and write JavaScript code that will listen for events and search through the `date/time` column to find rows that match user input.
 
-// Part 1: convert data.dateime string to date time form format
+// Part 1: convert data.dateime string to datetime form format
+// loop through the data object and update each datetime
+// var newData = data.forEach((sighting) => {
+    
+//     console.log(sighting);
+//     // get entries for each object in the array
+//     Object.entries(sighting).forEach(function([key,value]){
+//         sighting.datetime="z"});
+//     return datetimes;
+
+// });
+// console.log(newData);
+
+
+
+function newDate () {
+    data.map((sighting)=> {
+    var dateSplit= sighting.datetime.split("/");
+    
+    //month-day-year format
+    var months = dateSplit[0];
+    //write code that adds 0 to month or day for datetime format
+    if (months.length == 1){
+        month = "0" + months
+    }
+    var days = dateSplit[1];
+    if (days.length == 1){
+        day = "0" + days
+    }
+    var year = dateSplit[2];
+    
+    var dateArray = [year, month, day];
+    var upDate= dateArray.join("-");
+    // return the updated datetime format matching the yyyy-mm-dd of form
+    console.log(upDate);
+    
+    // need to apply the upDate as new date in data
+    for (i=0; i<data.length; i++) {
+        sighting.datetime === upDate}
+    console.log(data);
+    return data;
+    });
+}
+
+newDate(data);
 
 
 
 
 
-// Part 2: Build the table with d3 //
+// ----- Part 2: Build the table with d3 ------//
 
 // Assign search id to button for click event 
 var button = d3.select("#search");
-
 
 // buildTable function  
 function buildTable(data) {
