@@ -14,8 +14,7 @@
 
 // });
 // console.log(newData);
-
-
+d
 
 function newDate () {
     data.map((sighting)=> {
