@@ -18,7 +18,6 @@
 function newDate (myDate) {
     
     var dateSplit = myDate.split("-");
-    console.log(dateSplit);
 
     //month-day-year format
     var year = dateSplit[0];
@@ -79,7 +78,6 @@ function buildTable(data) {
         }); 
     });
 
-    // 
     // clear the input value
     d3.select("#datetime").node().value = "";
 };
@@ -92,13 +90,14 @@ function handleClick(){
 
     // Select input from HTML as search value
     var searchValue = d3.select("#datetime").node().value;
-    console.log(searchValue);
+    
     var searchValue= newDate(searchValue);
     // filter the data to return the data for the inputed date 
     var filteredData = data.filter(sighting => sighting.datetime == searchValue);
 
-    if (data.filter(sighting => sighting.datetime != searchValue)){
-        console.log("Please select another date")
+    if (data.filter(sighting => sighting.datetime == searchValue)){
+        var filteredData = data.filter(sighting => sighting.datetime == searchValue);
+        console.log(filteredData);
     }
     // with filtered data execute build table function
     buildTable(filteredData);
