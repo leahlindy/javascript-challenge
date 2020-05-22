@@ -93,11 +93,12 @@ function handleClick(){
     
     var searchValue= newDate(searchValue);
     // filter the data to return the data for the inputed date 
-    var filteredData = data.filter(sighting => sighting.datetime == searchValue);
-
+    
     if (data.filter(sighting => sighting.datetime == searchValue)){
         var filteredData = data.filter(sighting => sighting.datetime == searchValue);
-        console.log(filteredData);
+    }
+    else if (data.filter(sighting => sighting.datetime != searchValue)) {
+        console.log("Please select another date");
     }
     // with filtered data execute build table function
     buildTable(filteredData);
