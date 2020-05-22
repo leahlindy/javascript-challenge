@@ -14,38 +14,43 @@
 
 // });
 // console.log(newData);
-d
+// set up a function that can be used to alter the date format to match that in the data provided
+function newDate (myDate) {
+    
+    var dateSplit = myDate.split("-");
+    console.log(dateSplit);
 
-function newDate () {
-    data.map((sighting)=> {
-    var dateSplit= sighting.datetime.split("/");
-    
     //month-day-year format
-    var months = dateSplit[0];
-    //write code that adds 0 to month or day for datetime format
-    if (months.length == 1){
-        month = "0" + months
-    }
-    var days = dateSplit[1];
-    if (days.length == 1){
-        day = "0" + days
-    }
-    var year = dateSplit[2];
+    var year = dateSplit[0];
+    var month_split = dateSplit[1];
+    var day_split = dateSplit[2];
+
+    //split month and day again to remove 0 
+    var months = month_split.split("0");
     
-    var dateArray = [year, month, day];
-    var upDate= dateArray.join("-");
+    if (months[0] == 0){
+        var month = months[1];
+    }
+    else {
+        var month = months;
+    }
+    
+    var days = day_split.split("0")
+
+    if (days[0] == 0){
+        var day = days[1];
+    }
+    else {
+        var day = days;
+    }
+    
+    var dateArray = [month, day, year];
+    var upDate= dateArray.join("/");
     // return the updated datetime format matching the yyyy-mm-dd of form
-    console.log(upDate);
-    
-    // need to apply the upDate as new date in data
-    for (i=0; i<data.length; i++) {
-        Object.entries(sighting).forEach(([keys,values]) => {
-        values === upDate});
-    }
-});
+    return upDate;
 }
 
-newDate(data);
+newDate("2010-04-02");
 
 
 
@@ -88,10 +93,13 @@ function handleClick(){
     // Select input from HTML as search value
     var searchValue = d3.select("#datetime").node().value;
     console.log(searchValue);
-    
+    var searchValue= newDate(searchValue);
     // filter the data to return the data for the inputed date 
     var filteredData = data.filter(sighting => sighting.datetime == searchValue);
 
+    if (data.filter(sighting => sighting.datetime != searchValue)){
+        console.log("Please select another date")
+    }
     // with filtered data execute build table function
     buildTable(filteredData);
 }
