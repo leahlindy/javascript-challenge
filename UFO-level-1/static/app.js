@@ -37,11 +37,6 @@ function newDate (myDate) {
     return upDate;
 }
 
-newDate("2010-04-02");
-
-
-
-
 
 // ----- Part 2: Build the table with d3 ------//
 
@@ -97,4 +92,6 @@ function handleClick(){
     
 }
 // use click with click handler to execute stages
+buildTable(data);
+
 button.on("click", handleClick);
