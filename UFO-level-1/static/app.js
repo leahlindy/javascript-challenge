@@ -2,19 +2,7 @@
 //   * Make sure you have a column for `date/time`, `city`, `state`, `country`, `shape`, and `comment` at the very least.
 //   * Use a date form in your HTML document and write JavaScript code that will listen for events and search through the `date/time` column to find rows that match user input.
 
-// Part 1: convert data.dateime string to datetime form format
-// loop through the data object and update each datetime
-// var newData = data.forEach((sighting) => {
-    
-//     console.log(sighting);
-//     // get entries for each object in the array
-//     Object.entries(sighting).forEach(function([key,value]){
-//         sighting.datetime="z"});
-//     return datetimes;
-
-// });
-// console.log(newData);
-// set up a function that can be used to alter the date format to match that in the data provided
+// Part 1: convert date from website
 function newDate (myDate) {
     
     var dateSplit = myDate.split("-");
@@ -94,14 +82,19 @@ function handleClick(){
     var searchValue= newDate(searchValue);
     // filter the data to return the data for the inputed date 
     
-    if (data.filter(sighting => sighting.datetime == searchValue)){
-        var filteredData = data.filter(sighting => sighting.datetime == searchValue);
+    var filteredData = data.filter(sighting => sighting.datetime == searchValue);
+    // data.filter should return undefined if searchValue doesn't exist in sighting.datetime
+    // conditional check if filtered is undefined
+    if ( !filteredData ) {
+        // Let the user know to pick another date with an alert message - regular users won't know to look in the console
+        // revert to the unfiltered data
+        alert("Please select another date");
+        buildTable(data);
+    } 
+    else {
+        buildTable(filteredData);
     }
-    else if (data.filter(sighting => sighting.datetime != searchValue)) {
-        console.log("Please select another date");
-    }
-    // with filtered data execute build table function
-    buildTable(filteredData);
+    
 }
 // use click with click handler to execute stages
 button.on("click", handleClick);
